@@ -1,0 +1,14 @@
+{
+    "Records": [
+        {
+            "s3": {
+                "bucket": {
+                    "name": "alleycat-firehose-bucket"
+                },
+                "object": {
+                    "key": "2021/05/05/19/alleycat-data-firehose-1-2021-05-05-19-38-31-ddab2229-ad17-4c65-bfcd-ae48154e52c4.gz"
+                }
+            }
+        }
+    ]
+}

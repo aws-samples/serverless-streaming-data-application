@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: AlleyCat - Main DynamoDB table for application
+
+Resources:
+  ##########################################
+  # Application's DynamoDB table           #
+  ##########################################
+
+  DynamoDBTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      TableName: "alleycat-races"
+      AttributeDefinitions: 
+        - 
+          AttributeName: "GSI"
+          AttributeType: "N"
+        - 
+          AttributeName: "PK"
+          AttributeType: "S"
+        - 
+          AttributeName: "SK"
+          AttributeType: "S"
+      KeySchema: 
+        - 
+          AttributeName: "PK"
+          KeyType: "HASH"
+        - 
+          AttributeName: "SK"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+          ReadCapacityUnits: 20
+          WriteCapacityUnits: 20
+      GlobalSecondaryIndexes: 
+        - 
+          IndexName: "GSI_Index"
+          KeySchema: 
+            - 
+              AttributeName: "GSI"
+              KeyType: "HASH"
+            - 
+              AttributeName: "SK"
+              KeyType: "RANGE"
+          Projection: 
+              ProjectionType: "ALL"
+          ProvisionedThroughput: 
+              ReadCapacityUnits: 10
+              WriteCapacityUnits: 10
+        - 
+          IndexName: "GSI_PK_Index"
+          KeySchema: 
+            - 
+              AttributeName: "PK"
+              KeyType: "HASH"
+            - 
+              AttributeName: "GSI"
+              KeyType: "RANGE"
+          Projection: 
+              ProjectionType: "ALL"
+          ProvisionedThroughput: 
+              ReadCapacityUnits: 10
+              WriteCapacityUnits: 10              
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES      
+
+Outputs:
+  DynamoDBstreamARN:
+    Description: Stream ARN used to publish changes to IoT Core.
+    Value: !GetAtt DynamoDBTable.StreamArn

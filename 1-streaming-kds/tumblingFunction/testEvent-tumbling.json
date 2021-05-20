@@ -1,0 +1,29 @@
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "partitionKey1",
+                "sequenceNumber": "49617793833807623114047341091268703044525381670966132738",
+                "data": "eyJldmVudCI6ImZpbmFsIiwiZGV2aWNlVGltZXN0YW1wIjoxNjIwMjQwNjcyMDc2LCJzZWNvbmQiOjEsInJhY2VJZCI6NTQwMDgwMiwibmFtZSI6IkhheWRlbiIsInJhY2VySWQiOjAsImNsYXNzSWQiOjMsImNhZGVuY2UiOjgxLCJyZXNpc3RhbmNlIjo3OX0=",
+                "approximateArrivalTimestamp": 1620240673.141
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49617793833807623114047341091268703044525381670966132738",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::763653534548:role/alleycat-kds-TumblingWindowFunctionRole-15DR1DLTKHLEO",
+            "awsRegion": "us-east-2",
+            "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat"
+        }
+    ],
+    "shardId": "shardId-000000000000",
+    "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat",
+    "window": {
+        "start": "2021-05-05T18:51:00Z",
+        "end": "2021-05-05T18:51:15Z"
+    },
+    "state": {},
+    "isFinalInvokeForWindow": false,
+    "isWindowTerminatedEarly": false
+}

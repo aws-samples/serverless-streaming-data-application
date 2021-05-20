@@ -1,0 +1,68 @@
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "partitionKey1",
+                "sequenceNumber": "49618043139011970373951404260500643410432850079707561986",
+                "data": "eyJldmVudCI6InVwZGF0ZSIsImRldmljZVRpbWVzdGFtcCI6MTYyMDU2Njg0Mjk3MCwic2Vjb25kIjoxLCJyYWNlSWQiOjEzMSwibmFtZSI6IkhheWRlbiIsInJhY2VySWQiOjAsImNsYXNzSWQiOjMsImNhZGVuY2UiOjgzLCJyZXNpc3RhbmNlIjo3OH0=",
+                "approximateArrivalTimestamp": 1620566844.017
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49618043139011970373951404260500643410432850079707561986",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::763653534548:role/alleycat-kds-TumblingWindowFunctionRole-1UNF15EPY6616",
+            "awsRegion": "us-east-2",
+            "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat"
+        },
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "partitionKey1",
+                "sequenceNumber": "49618043139011970373951404260501852336252464708882268162",
+                "data": "eyJldmVudCI6InVwZGF0ZSIsImRldmljZVRpbWVzdGFtcCI6MTYyMDU2Njg0Mjk3MSwic2Vjb25kIjoxLCJyYWNlSWQiOjEzMSwibmFtZSI6Ikh1YmVydCIsInJhY2VySWQiOjEsImNsYXNzSWQiOjMsImNhZGVuY2UiOjYyLCJyZXNpc3RhbmNlIjo2OC42fQ==",
+                "approximateArrivalTimestamp": 1620566844.019
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49618043139011970373951404260501852336252464708882268162",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::763653534548:role/alleycat-kds-TumblingWindowFunctionRole-1UNF15EPY6616",
+            "awsRegion": "us-east-2",
+            "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat"
+        },
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "partitionKey1",
+                "sequenceNumber": "49618043139011970373951404261146209798107062127720136706",
+                "data": "eyJldmVudCI6InVwZGF0ZSIsImRldmljZVRpbWVzdGFtcCI6MTYyMDU2Njg0NDA0Miwic2Vjb25kIjoyLCJyYWNlSWQiOjEzMSwibmFtZSI6IkhheWRlbiIsInJhY2VySWQiOjAsImNsYXNzSWQiOjMsImNhZGVuY2UiOjgzLCJyZXNpc3RhbmNlIjo3OH0=",
+                "approximateArrivalTimestamp": 1620566844.982
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49618043139011970373951404261146209798107062127720136706",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::763653534548:role/alleycat-kds-TumblingWindowFunctionRole-1UNF15EPY6616",
+            "awsRegion": "us-east-2",
+            "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat"
+        },
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "partitionKey1",
+                "sequenceNumber": "49618043139011970373951404261149836575565906015244255234",
+                "data": "eyJldmVudCI6InVwZGF0ZSIsImRldmljZVRpbWVzdGFtcCI6MTYyMDU2Njg0NDA0Miwic2Vjb25kIjoyLCJyYWNlSWQiOjEzMSwibmFtZSI6Ikh1YmVydCIsInJhY2VySWQiOjEsImNsYXNzSWQiOjMsImNhZGVuY2UiOjYyLCJyZXNpc3RhbmNlIjo2OS4yfQ==",
+                "approximateArrivalTimestamp": 1620566844.985
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49618043139011970373951404261149836575565906015244255234",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::763653534548:role/alleycat-kds-TumblingWindowFunctionRole-1UNF15EPY6616",
+            "awsRegion": "us-east-2",
+            "eventSourceARN": "arn:aws:kinesis:us-east-2:763653534548:stream/alleycat"
+        }
+    ]
+}

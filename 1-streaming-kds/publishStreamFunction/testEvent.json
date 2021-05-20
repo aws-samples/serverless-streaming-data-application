@@ -1,0 +1,99 @@
+{
+    "Records": [
+        {
+            "eventID": "1aa3f29ff711a60f131a667904b53364",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-2",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1620585150,
+                "Keys": {
+                    "SK": {
+                        "S": "results"
+                    },
+                    "PK": {
+                        "S": "race-103"
+                    }
+                },
+                "NewImage": {
+                    "SK": {
+                        "S": "results"
+                    },
+                    "PK": {
+                        "S": "race-103"
+                    },
+                    "GSI": {
+                        "N": "1"
+                    },
+                    "results": {
+                        "S": "{\"0\":164.16,\"1\":118.602,\"2\":100.512,\"3\":130.784,\"4\":127.908,\"5\":155.348,\"6\":139.728,\"7\":107.1,\"8\":149.628,\"9\":81.9904}"
+                    },
+                    "ts": {
+                        "N": "1620585150506"
+                    }
+                },
+                "SequenceNumber": "1593900000000008425930044",
+                "SizeBytes": 178,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-2:763653534548:table/alleycat-races/stream/2021-05-09T13:05:29.668"
+        },
+        {
+            "eventID": "e89cddbaca5381b1c9b0d63838bf9182",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-2",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1620585151,
+                "Keys": {
+                    "SK": {
+                        "S": "results"
+                    },
+                    "PK": {
+                        "S": "race-103"
+                    }
+                },
+                "NewImage": {
+                    "SK": {
+                        "S": "results"
+                    },
+                    "PK": {
+                        "S": "race-103"
+                    },
+                    "GSI": {
+                        "N": "1"
+                    },
+                    "results": {
+                        "S": "{\"0\":164.16,\"1\":121.374,\"2\":101.664,\"3\":131.028,\"4\":128.106,\"5\":157.336,\"6\":140.466,\"7\":111.18,\"8\":150.516,\"9\":84.4396}"
+                    },
+                    "ts": {
+                        "N": "1620585150786"
+                    }
+                },
+                "OldImage": {
+                    "SK": {
+                        "S": "results"
+                    },
+                    "PK": {
+                        "S": "race-103"
+                    },
+                    "GSI": {
+                        "N": "1"
+                    },
+                    "results": {
+                        "S": "{\"0\":164.16,\"1\":118.602,\"2\":100.512,\"3\":130.784,\"4\":127.908,\"5\":155.348,\"6\":139.728,\"7\":107.1,\"8\":149.628,\"9\":81.9904}"
+                    },
+                    "ts": {
+                        "N": "1620585150506"
+                    }
+                },
+                "SequenceNumber": "1594000000000008425930069",
+                "SizeBytes": 338,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-2:763653534548:table/alleycat-races/stream/2021-05-09T13:05:29.668"
+        }
+    ]
+}

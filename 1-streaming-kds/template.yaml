@@ -1,0 +1,102 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: AlleyCat - KDS example
+
+# This template builds the Kinesis stream ARN from the base 
+# template using the following expression:
+#   !Sub "arn:aws:kinesis:${AWS::Region}:${AWS::AccountId}:stream/alleycat"
+
+Parameters:
+  KinesisStreamName:
+    Type: String
+    Default: 'alleycat'
+  DynamoDBtableName:
+    Type: String
+    Default: alleycat-races
+  IoTdataEndpoint:
+    Type: String
+    Default: 'a2ty1m17b5znw2-ats.iot.us-east-2.amazonaws.com'
+  DynamoDBstreamARN:
+    Type: String
+    Default: 'arn:aws:dynamodb:us-east-2:763653534548:table/alleycat-races/stream/2021-05-09T13:05:29.668'
+
+Resources:
+  ##########################################
+  # Lambda functions                       #
+  ##########################################
+
+  TumblingWindowFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: tumblingFunction/    
+      Handler: app.handler
+      Runtime: nodejs14.x
+      Timeout: 15
+      MemorySize: 256
+      Environment:
+        Variables:
+          DDB_TABLE: !Ref DynamoDBtableName
+      Policies:
+        DynamoDBCrudPolicy:
+          TableName: !Ref DynamoDBtableName
+      Events:
+        Stream:
+          Type: Kinesis
+          Properties:
+            Stream: !Sub "arn:aws:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${KinesisStreamName}"
+            BatchSize: 1000
+            StartingPosition: TRIM_HORIZON      
+            # TumblingWindowInSeconds: 15  
+
+  FinalResultsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: finalResultsFunction/    
+      Handler: app.handler
+      Runtime: nodejs14.x
+      Timeout: 15
+      MemorySize: 512
+      Environment:
+        Variables:
+          DDB_TABLE: !Ref DynamoDBtableName
+      Policies:
+        DynamoDBCrudPolicy:
+          TableName: !Ref DynamoDBtableName
+      Events:
+        Stream:
+          Type: Kinesis
+          Properties:
+            Stream: !Sub "arn:aws:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${KinesisStreamName}"
+            BatchSize: 100
+            StartingPosition: TRIM_HORIZON      
+
+  PublishStreamFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Updates IoT topics with changes to DDB table    
+      CodeUri: publishStreamFunction/    
+      Handler: app.handler
+      Runtime: nodejs14.x
+      Timeout: 10
+      ReservedConcurrentExecutions: 1
+      MemorySize: 128
+      Environment:
+        Variables:
+          IOT_DATA_ENDPOINT: !Ref IoTdataEndpoint       
+          TOPIC: 'alleycat-subscribe'             
+      Policies:
+        - Statement:
+          - Sid: PublishToIotPolicy
+            Effect: Allow
+            Action:
+              - 'iot:Publish'
+            Resource: '*'          
+      Events:
+        Stream:
+          Type: DynamoDB
+          Properties:
+            Stream: !Ref DynamoDBstreamARN
+            BatchSize: 10
+            StartingPosition: TRIM_HORIZON
+
+       
