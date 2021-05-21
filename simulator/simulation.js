@@ -13,9 +13,14 @@ const RACE_ID = Math.floor(Date.now() / WINDOW_LENGTH_MS )
 const RACE_LENGTH_SECONDS = (5 * 60)
 const INTERVAL_SECONDS = 1
 
+// NOTE - The default number of races is set very low to avoid accidental cost. Please read all the blog posts related to this
+// series and understand the implications of sending more messages before increasing this number.
+// - 1 racer over 5 minutes creates 300 messages.
+// - 1,000 racer over 5 minutes creates 300,000 messages.
+
 // Modify for simulation
-const RACERS_MAX = 100       // From 1-1000 - note that this creates more messages and impacts cost.
-const CLASS_ID = 1   // 1-6: Represents range of cycle classes available to Racer
+const RACERS_MAX = 10  // From 1-1000 - note that this creates more messages and impacts cost.
+const CLASS_ID = 1     // 1-6: Represents range of cycle classes available to Racer
 
 let racers = []
 
