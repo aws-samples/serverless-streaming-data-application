@@ -48,16 +48,16 @@ git clone https://github.com/aws-samples/serverless-streaming-data-application
 
 1. From the command line, install the realtime messaging stack and Kinesis Data Streams stack:
 ```
-cd ./0-setup/1-core
+cd ./0-setup/base-template/1-core
 sam deploy --guided 
 ```
-During the prompts, enter `streaming-app-core` for the stack name, enter your preferred Region, and accept the defaults for the remaining questions. Note the outputs.
+During the prompts, enter `streaming-app-core` for the stack name, enter your preferred Region, and accept the defaults for the remaining questions.
 
 ### 2. Set up DynamoDB table
 
 1. From the command line, install the application's DynamoDB table using the AWS SAM template:
 ```
-cd ./0-setup/2-ddb
+cd ../2-ddb
 sam deploy --guided 
 ```
 During the prompts, enter `streaming-app-ddb` for the stack name, enter your preferred Region, and accept the defaults for the remaining questions. Note the DynamoDB stream ARN output.
@@ -66,19 +66,23 @@ During the prompts, enter `streaming-app-ddb` for the stack name, enter your pre
 
 1. From the command line, install the application's API functionaliy using the AWS SAM template:
 ```
-cd 0-setup/3-api
+cd ../3-api
 sam deploy --guided 
 ```
-During the prompts, enter `streaming-app-apis` for the stack name, enter your preferred Region, and accept the defaults for the remaining questions. Note the API Gateway endpoint output.
+During the prompts, enter `streaming-app-apis` for the stack name, enter your preferred Region, and answer Y to both questions `<<API>> may not have authorization defined, Is this okay? [y/N]`. Accept the defaults for the remaining questions. Note the API Gateway endpoint output.
 
 ### 4. Set up streaming examples
 
-1. Change directory, depending upon the example:
+1. Change back to the route directory of the repo:
 ```
-cd 1-streaming-kds    <--- Kinesis Data Streams (see part 2 of the blog series)
-cd 2-streaming-kdf    <--- Kinesis Data Firehose (see part 3 of the blog series)
+cd ../../..
 ```
-2. Deploy the AWS SAM template in the directory:
+2. Change directory, depending upon the example:
+```
+cd ./1-streaming-kds    <--- Kinesis Data Streams (see part 2 of the blog series)
+cd ./2-streaming-kdf    <--- Kinesis Data Firehose (see part 3 of the blog series)
+```
+3. Deploy the AWS SAM template in the directory:
 ```
 sam deploy --guided 
 ```
@@ -157,6 +161,10 @@ During the prompts, enter a stack name, your preferred Region, and accept the de
 
 1. Manually delete any objects in the application's S3 buckets.
 2. Use the CloudFormation console to delete all the stacks deployed.
+
+## Clearing the DynamoDB table
+
+For testing and development purposes, the easiest way to clear all the data in a DynamoDB table is to delete the `streaming-app-ddb` stack and redeploy. This is why this resource is available as a separate stack to make it easy to clear the data.
 
 ## Next steps
 
