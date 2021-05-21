@@ -46,6 +46,7 @@ Resources:
           ProvisionedThroughput: 
               ReadCapacityUnits: 10
               WriteCapacityUnits: 10
+      LocalSecondaryIndexes:
         - 
           IndexName: "GSI_PK_Index"
           KeySchema: 
@@ -56,10 +57,7 @@ Resources:
               AttributeName: "GSI"
               KeyType: "RANGE"
           Projection: 
-              ProjectionType: "ALL"
-          ProvisionedThroughput: 
-              ReadCapacityUnits: 10
-              WriteCapacityUnits: 10              
+              ProjectionType: "ALL"       
       StreamSpecification:
         StreamViewType: NEW_AND_OLD_IMAGES      
 
