@@ -30,11 +30,11 @@ Vue.prototype.$appName = 'Alleycat'
 //          aws iot describe-endpoint --endpoint-type iot:Data-ATS --region REGION_CODE
 
 Vue.prototype.$appConfig = {
-   poolId: 'us-east-2:dc0d6c04-524e-475a-a460-62e710386ce6', // 'YourCognitoIdentityPoolId'
-   host: 'a2ty1m17b5znw2-ats.iot.us-east-2.amazonaws.com', // 'YourAwsIoTEndpoint', e.g. 'prefix.iot.us-east-1.amazonaws.com'
-   region: 'us-east-2', // Your region
-   historyBucket: 'alleycat-history-bucket',  // Your history bucket
-   APIendpoint: 'https://1692tixzy0.execute-api.us-east-2.amazonaws.com'
+   poolId: '', // 'YourCognitoIdentityPoolId', e.g. 'us-east-2:ab12bcb1-1234-ab12-1234-1234abcd1234'
+   host: '', // 'YourAwsIoTEndpoint', e.g. 'prefix.iot.us-east-1.amazonaws.com'
+   region: '', // Your region, e.g. us-west-2
+   historyBucket: '',  // Your history bucket name (not ARN)
+   APIendpoint: '' // e.g. 'https://1234abcd123.execute-api.us-east-2.amazonaws.com'
 }
 
 export const bus = new Vue()
