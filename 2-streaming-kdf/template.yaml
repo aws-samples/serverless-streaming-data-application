@@ -35,6 +35,18 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref HistoryBucketName
+      CorsConfiguration:
+        CorsRules:
+        - AllowedHeaders:
+            - "*"
+          AllowedMethods:
+            - GET
+            - PUT
+            - POST
+            - DELETE
+            - HEAD
+          AllowedOrigins:
+            - "*"     
 
   ##########################################
   # Lambda functions                       #
