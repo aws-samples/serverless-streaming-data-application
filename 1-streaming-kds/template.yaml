@@ -12,13 +12,13 @@ Parameters:
     Default: 'alleycat'
   DynamoDBtableName:
     Type: String
-    Default: alleycat-races
+    Default: 'alleycat-races'
   IoTdataEndpoint:
     Type: String
-    Default: 'a2ty1m17b5znw2-ats.iot.us-east-2.amazonaws.com'
+    Default: 'abc123abc123-ats.iot.us-east-2.amazonaws.com'
   DynamoDBstreamARN:
     Type: String
-    Default: 'arn:aws:dynamodb:us-east-2:763653534548:table/alleycat-races/stream/2021-05-09T13:05:29.668'
+    Default: 'arn:aws:dynamodb:us-east-2:123456789012:table/alleycat-races/stream/2021-06-09T13:05:29.668'
 
 Resources:
   ##########################################
