@@ -40,7 +40,7 @@ const flushBatch = async () => {
     params.Records.push(
       {
         "Data": msg,
-        "PartitionKey": parseInt(Math.random()*100000000)
+        "PartitionKey": parseInt(Math.random()*100000000).toString()
       }
     )
   })
