@@ -3,13 +3,14 @@
  */
 
 'use strict'
-const { main } = require ('./simulation.js')
 
 // Mock environment variables
 process.env.AWS_REGION = 'us-east-2'
 process.env.localTest = true
 process.env.DDB_TABLE = 'alleycat-races'
 process.env.streamName = 'alleycat'
+
+const { main } = require ('./simulation.js')
 
 // The standard Lambda handler
 exports.handler = async (event) => {
