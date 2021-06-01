@@ -19,7 +19,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/aws-samples/"
+        href="https://github.com/aws-samples/serverless-streaming-data-application"
         target="_blank"
         text
       >
