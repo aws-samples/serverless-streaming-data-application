@@ -8,7 +8,7 @@ The app is a home fitness system that allows users to compete in an intense seri
 The software connects the stationary exercise bike with a backend application that processes the data from thousands of remote devices. The frontend allows users to configure their races and view real-time leaderboard and historical rankings.
 
 To learn more about how this application works, see the 5-part series on the AWS Compute Blog:
-* Part 1: TBD.
+* Part 1: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/.
 * Part 2: TBD.
 * Part 3: TBD.
 * Part 4: TBD.
