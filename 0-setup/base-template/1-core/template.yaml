@@ -24,7 +24,7 @@ Resources:
     Type: AWS::Cognito::UserPool
     Properties:
       UserPoolName: AlleyCatUserPool
-      MfaConfiguration: "OFF"
+      MfaConfiguration: "OPTIONAL"
       Schema:
         - Name: email
           AttributeDataType: String

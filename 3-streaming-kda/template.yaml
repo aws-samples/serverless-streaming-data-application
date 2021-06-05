@@ -9,7 +9,7 @@ Description: AlleyCat - KDA example
 Parameters:
   IoTdataEndpoint:
     Type: String
-    Default: 'a2ty1m17b5znw2-ats.iot.us-east-2.amazonaws.com'
+    Default: 'abc123abc123-ats.iot.us-east-2.amazonaws.com'
 
 Resources:
   ##########################################

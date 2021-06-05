@@ -28,6 +28,7 @@ Resources:
         - 
           AttributeName: "SK"
           KeyType: "RANGE"
+      BillingMode: "PROVISIONED"
       ProvisionedThroughput: 
           ReadCapacityUnits: 20
           WriteCapacityUnits: 20
