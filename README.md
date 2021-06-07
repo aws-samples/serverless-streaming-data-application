@@ -9,7 +9,7 @@ The software connects the stationary exercise bike with a backend application th
 
 To learn more about how this application works, see the 5-part series on the AWS Compute Blog:
 * Part 1: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/.
-* Part 2: TBD.
+* Part 2: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-2/.
 * Part 3: TBD.
 * Part 4: TBD.
 * Part 5: TBD.
