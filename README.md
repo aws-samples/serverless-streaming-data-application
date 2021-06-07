@@ -168,7 +168,36 @@ For testing and development purposes, the easiest way to clear all the data in a
 
 ## Avatars
 
-The avatars used in this example application are created by the [Avatar Building package](https://www.npmjs.com/package/avatar-builder), used under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
+The avatars used in this example application are created by the [Avatar Building package](https://www.npmjs.com/package/avatar-builder), used under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0). Use the following script to create multiple avatars icons with this package:
+
+```
+/*! Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  SPDX-License-Identifier: MIT-0
+ */
+
+// Run this script to create icons for racers, using the Avatar Builder library (https://www.npmjs.com/package/avatar-builder?activeTab=readme)
+
+const Avatar = require('avatar-builder')
+const MAX_RACERS = 100
+
+// Generate icons for racers
+const fs = require ('fs')
+
+const avatar = Avatar.builder(
+    Avatar.Image.margin(Avatar.Image.roundedRectMask(Avatar.Image.compose(
+    Avatar.Image.randomFillStyle(),
+    Avatar.Image.shadow(Avatar.Image.margin(Avatar.Image.cat(), 8), {blur: 5, offsetX: 2.5, offsetY: -2.5,color:'rgba(0,0,0,0.75)'})
+    ), 32), 8),
+    128, 128)
+
+const createIcon = (id) => {
+    avatar.create(id).then(buffer => fs.writeFileSync(`./icons/${id}.png`, buffer))
+}
+
+for (let i = 1; i < MAX_RACERS; i++ )
+    createIcon(i)
+```
+
 
 ## Next steps
 
