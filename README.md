@@ -166,6 +166,10 @@ During the prompts, enter a stack name, your preferred Region, and accept the de
 
 For testing and development purposes, the easiest way to clear all the data in a DynamoDB table is to delete the `streaming-app-ddb` stack and redeploy. This is why this resource is available as a separate stack to make it easy to clear the data.
 
+## Avatars
+
+The avatars used in this example application are created by the [Avatar Building package](https://www.npmjs.com/package/avatar-builder), used under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
+
 ## Next steps
 
 The AWS Compute Blog series  at the top of this README file contains additional information about the application design and architecture.
