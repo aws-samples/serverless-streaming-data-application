@@ -10,8 +10,8 @@ The software connects the stationary exercise bike with a backend application th
 To learn more about how this application works, see the 5-part series on the AWS Compute Blog:
 * Part 1: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/.
 * Part 2: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-2/.
-* Part 3: TBD.
-* Part 4: TBD.
+* Part 3: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-3/.
+* Part 4: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-4/.
 * Part 5: TBD.
 
 :warning: **Running this application will incur costs. It uses applications not in the AWS Free Tier and generates large numbers of messages.**
