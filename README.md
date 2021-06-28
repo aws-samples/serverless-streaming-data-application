@@ -12,7 +12,7 @@ To learn more about how this application works, see the 5-part series on the AWS
 * Part 2: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-2/.
 * Part 3: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-3/.
 * Part 4: https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-4/.
-* Part 5: TBD.
+* Part 5: https://aws.amazon.com/blogs/compute/monitoring-and-troubleshooting-serverless-data-analytics-applications/.
 
 :warning: **Running this application will incur costs. It uses applications not in the AWS Free Tier and generates large numbers of messages.**
 
