@@ -22,7 +22,7 @@ exports.handler = async (event) => {
         Limit: 100
     }
 
-	console.log(params)
+    console.log(params)
     const result = await documentClient.query(params).promise()
     console.log(result)
     
