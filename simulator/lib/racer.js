@@ -17,9 +17,11 @@ const MAX_CADENCE = 90
 const MIN_RESISTANCE = 33
 const MAX_RESISTANCE = 86
 
+const ID_OFFSET = 100
+
 class Racer {
   constructor (id) {
-    this.id = id
+    this.id = id + ID_OFFSET
     // Seeded so each racer has a consistent name for each given ID
     faker.seed(id+1)  // Seed with zero doesn't work
     this.name = faker.name.firstName()
